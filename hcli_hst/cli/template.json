@@ -1,0 +1,94 @@
+{
+    "hcliTemplateVersion": "1.0",
+    "executable": [
+        {
+            "command": "hst ship status {p}",
+            "http": "get"
+        }
+    ],
+    "cli": [
+        {
+            "id": "hst",
+            "name": "hst",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "hst - an HCLI for interacting with the SpaceTraders API and game."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst <command>"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": ""
+                }
+            ],
+            "command": [
+                {
+                    "href": "hstship",
+                    "name": "ship",
+                    "description": "The \"ship\" command lets you interact with ships in your fleet."
+                }
+            ]
+        },
+        {
+            "id": "hstship",
+            "name": "ship",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "ship - interact with the ships in your fleet."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst ship <command>"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": ""
+                }
+            ],
+            "command": [
+                {
+                    "href": "hstshipstatus",
+                    "name": "status",
+                    "description": "The \"status\" command lets you get the status of a specific ship per provided ship id."
+                }
+            ]
+        },
+        {
+            "id": "hstshipstatus",
+            "name": "status",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "status - returns the status of a specific ship per provided ship id."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst ship status <ship_id>"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": ""
+                }
+            ],
+            "parameter": {
+                "href": "hstshipstatusparameter"
+            }
+        }
+    ]
+}
