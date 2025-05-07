@@ -2,7 +2,35 @@
     "hcliTemplateVersion": "1.0",
     "executable": [
         {
-            "command": "hst ship status {p}",
+            "command": "hst agent",
+            "http": "get"
+        },
+        {
+            "command": "hst agent {p}",
+            "http": "get"
+        },
+        {
+            "command": "hst agents",
+            "http": "get"
+        },
+        {
+            "command": "hst server",
+            "http": "get"
+        },
+        {
+            "command": "hst ships",
+            "http": "get"
+        },
+        {
+            "command": "hst ships {p}",
+            "http": "get"
+        },
+        {
+            "command": "hst systems",
+            "http": "get"
+        },
+        {
+            "command": "hst systems {p}",
             "http": "get"
         }
     ],
@@ -30,23 +58,43 @@
             ],
             "command": [
                 {
-                    "href": "hstship",
-                    "name": "ship",
-                    "description": "The \"ship\" command lets you interact with ships in your fleet."
+                    "href": "hstagent",
+                    "name": "agent",
+                    "description": "The \"agent\" command lets you list the authenticated SpaceTraders agent or the requested agent id."
+                },
+                {
+                    "href": "hstagents",
+                    "name": "agents",
+                    "description": "The \"agents\" command lets you list all the registered SpaceTraders agents."
+                },
+                {
+                    "href": "hstserver",
+                    "name": "server",
+                    "description": "The \"server\" command lets you get status for the SpaceTraders server."
+                },
+                {
+                    "href": "hstships",
+                    "name": "ships",
+                    "description": "The \"ships\" command lets you interact with ships in your fleet."
+                },
+                {
+                    "href": "hstsystems",
+                    "name": "systems",
+                    "description": "The \"systems\" command lets you interact with star systems."
                 }
             ]
         },
         {
-            "id": "hstship",
-            "name": "ship",
+            "id": "hstagent",
+            "name": "agent",
             "section": [
                 {
                     "name": "name",
-                    "description": "ship - interact with the ships in your fleet."
+                    "description": "agent - interact with the authenticated SpaceTraders agent or the requested agent id."
                 },
                 {
                     "name": "synopsis",
-                    "description": "hst ship <command>"
+                    "description": "hst agent [agent_id]"
                 },
                 {
                     "name": "description",
@@ -54,40 +102,105 @@
                 },
                 {
                     "name": "examples",
-                    "description": ""
-                }
-            ],
-            "command": [
-                {
-                    "href": "hstshipstatus",
-                    "name": "status",
-                    "description": "The \"status\" command lets you get the status of a specific ship per provided ship id."
-                }
-            ]
-        },
-        {
-            "id": "hstshipstatus",
-            "name": "status",
-            "section": [
-                {
-                    "name": "name",
-                    "description": "status - returns the status of a specific ship per provided ship id."
-                },
-                {
-                    "name": "synopsis",
-                    "description": "hst ship status <ship_id>"
-                },
-                {
-                    "name": "description",
-                    "description": ""
-                },
-                {
-                    "name": "examples",
-                    "description": ""
+                    "description": "hst agent\n\nhst agent CALLSIGN"
                 }
             ],
             "parameter": {
-                "href": "hstshipstatusparameter"
+                "href": "hstagentparameter"
+            }
+        },
+        {
+            "id": "hstagents",
+            "name": "agents",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "agents - list all registered SpaceTraders agents."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst agent"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": "hstserver",
+            "name": "server",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "server - get SpaceTraders server status."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst server"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": "hstships",
+            "name": "ships",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "ships - interact with the ships in your fleet."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst ships [ship_id]"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": "hst ships\n\nhst ships CALLSIGN-1"
+                }
+            ],
+            "parameter": {
+                "href": "hstshipsparameter"
+            }
+        },
+        {
+            "id": "hstsystems",
+            "name": "systems",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "systems - returns star system status per provided star system id."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst systems [star_system_id]"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": "hst systems\n\nhst systems X1-YR55"
+                }
+            ],
+            "parameter": {
+                "href": "hstsystemsparameter"
             }
         }
     ]

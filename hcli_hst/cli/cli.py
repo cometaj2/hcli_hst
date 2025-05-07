@@ -2,7 +2,6 @@ import json
 import io
 import service
 import logger
-from utils import formatting
 
 from typing import Optional, Dict, Callable, List
 
@@ -16,7 +15,11 @@ class CLI:
         self.inputstream = inputstream
         self.service = service.Service()
         self.handlers: Dict[str, Callable] = {
-            'ship': self._handle_ship
+            'agent': self._handle_agent,
+            'agents': self._handle_agents,
+            'ships': self._handle_ships,
+            'systems': self._handle_systems,
+            'server': self._handle_server
         }
 
     def execute(self) -> Optional[io.BytesIO]:
@@ -29,8 +32,26 @@ class CLI:
 
         return None
 
-    def _handle_ship(self) -> None:
+    def _handle_agent(self) -> None:
+        if len(self.commands) == 2:
+            return io.BytesIO(self.service.agent())
         if len(self.commands) == 3:
-            if self.commands[2] == "status":
-                return io.BytesIO(self.service.status().encode('utf-8'))
-        return None
+            return io.BytesIO(self.service.agent(self.commands[2]))
+
+    def _handle_agents(self) -> None:
+        return io.BytesIO(self.service.agents())
+
+    def _handle_ships(self) -> None:
+        if len(self.commands) == 2:
+            return io.BytesIO(self.service.ships())
+        if len(self.commands) == 3:
+                return io.BytesIO(self.service.ships(self.commands[2]))
+
+    def _handle_systems(self) -> None:
+        if len(self.commands) == 2:
+            return io.BytesIO(self.service.systems())
+        if len(self.commands) == 3:
+                return io.BytesIO(self.service.systems(self.commands[2]))
+
+    def _handle_server(self) -> None:
+        return io.BytesIO(self.service.server())

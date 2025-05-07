@@ -8,7 +8,7 @@ dynamic = ["version", "dependencies"]
 description="HCLI hst is a python package wrapper that contains an HCLI sample application (hst); hst is an HCLI for playing SpaceTraders via the SpaceTraders API."
 readme = "README.rst"
 authors = [{name = "Jeff Michaud", email = "cometaj2@proton.me"}]
-license = {text = "MIT"}
+license = "MIT"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -34,6 +34,7 @@ dependencies = {file = "requirements.txt"}
 [tool.setuptools]
 packages = ["hcli_hst",
             "hcli_hst.cli",
+            "hcli_hst.cli.utils",
             "hcli_hst.data"]
 include-package-data = true
 
