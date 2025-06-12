@@ -123,7 +123,7 @@
                 },
                 {
                     "name": "examples",
-                    "description": "hst agent\n\nhst agent CALLSIGN"
+                    "description": "hst agent\\n\\nhst agent CALLSIGN"
                 }
             ],
             "parameter": {
@@ -140,15 +140,11 @@
                 },
                 {
                     "name": "synopsis",
-                    "description": "hst agent"
+                    "description": "hst agents"
                 },
                 {
                     "name": "description",
-                    "description": ""
-                },
-                {
-                    "name": "examples",
-                    "description": ""
+                    "description": "Lists all the registered SpaceTraders agents."
                 }
             ]
         },
@@ -166,11 +162,7 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
-                },
-                {
-                    "name": "examples",
-                    "description": ""
+                    "description": "Provides SpaceTraders server status."
                 }
             ]
         },
@@ -188,11 +180,11 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
+                    "description": "Describe your ships to know how they are configured or what cargo they may have."
                 },
                 {
                     "name": "examples",
-                    "description": "hst ships\n\nhst ships CALLSIGN-1"
+                    "description": "hst ships\\n\\nhst ships CALLSIGN-1"
                 }
             ],
             "parameter": {
@@ -213,11 +205,11 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
+                    "description": "Describe star systems to find out where you would want to go."
                 },
                 {
                     "name": "examples",
-                    "description": "hst systems\n\nhst systems X1-YR55"
+                    "description": "hst systems\\n\\nhst systems X1-YR55"
                 }
             ],
             "parameter": {
@@ -238,11 +230,11 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
+                    "description": "List contracts to see what you would want to sign up for."
                 },
                 {
                     "name": "examples",
-                    "description": "hst contracts\n\nhst contracts cmbtq3a6nc1h7uo6x8xc26ihd"
+                    "description": "hst contracts\\n\\nhst contracts cmbtq3a6nc1h7uo6x8xc26ihd"
                 }
             ],
             "command": [
@@ -267,7 +259,7 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
+                    "description": "Accepts the contract, which can then be fulfilled."
                 },
                 {
                     "name": "examples",
