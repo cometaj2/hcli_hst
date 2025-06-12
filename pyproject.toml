@@ -1,14 +1,14 @@
 [build-system]
-requires = ["setuptools>=45", "wheel"]
+requires = ["setuptools==75.3.2", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "hcli_hst"
 dynamic = ["version", "dependencies"]
-description="HCLI hst is a python package wrapper that contains an HCLI sample application (hst); hst is an HCLI for playing SpaceTraders via the SpaceTraders API."
+description="HCLI hst is a python package wrapper that contains an HCLI sample application (hst); hst is an HCLI SpaceTraders V2 API wrapper to help play the SpaceTraders API game."
 readme = "README.rst"
 authors = [{name = "Jeff Michaud", email = "cometaj2@proton.me"}]
-license = "MIT"
+license = { file = "LICENSE.txt" }
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
