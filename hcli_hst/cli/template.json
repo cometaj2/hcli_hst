@@ -32,6 +32,22 @@
         {
             "command": "hst systems {p}",
             "http": "get"
+        },
+        {
+            "command": "hst contracts",
+            "http": "get"
+        },
+        {
+            "command": "hst contracts {p}",
+            "http": "get"
+        },
+        {
+            "command": "hst contracts accept",
+            "http": "get"
+        },
+        {
+            "command": "hst contracts accept {p}",
+            "http": "post"
         }
     ],
     "cli": [
@@ -49,7 +65,7 @@
                 },
                 {
                     "name": "description",
-                    "description": ""
+                    "description": "This HCLI is a wrapper for the SpaceTraders V2 API (https://spacetraders.io/) and expects to make use of the SPACETRADERS_AGENT_TOKEN environment variable."
                 },
                 {
                     "name": "examples",
@@ -81,6 +97,11 @@
                     "href": "hstsystems",
                     "name": "systems",
                     "description": "The \"systems\" command lets you interact with star systems."
+                },
+                {
+                    "href": "hstcontracts",
+                    "name": "contracts",
+                    "description": "The \"contracts\" command lets you list available contracts."
                 }
             ]
         },
@@ -201,6 +222,60 @@
             ],
             "parameter": {
                 "href": "hstsystemsparameter"
+            }
+        },
+        {
+            "id": "hstcontracts",
+            "name": "contracts",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "contracts - returns a list of available contracts."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst contracts [contract_id]"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": "hst contracts\n\nhst contracts cmbtq3a6nc1h7uo6x8xc26ihd"
+                }
+            ],
+            "command": [
+                {
+                    "href": "hstcontractsaccept",
+                    "name": "accept",
+                    "description": "The \"accept\" command lets you accept a contract by id."
+                }
+            ]
+        },
+        {
+            "id": "hstcontractsaccept",
+            "name": "accept",
+            "section": [
+                {
+                    "name": "name",
+                    "description": "accept - accept a contract by id."
+                },
+                {
+                    "name": "synopsis",
+                    "description": "hst contracts accept <contract_id>"
+                },
+                {
+                    "name": "description",
+                    "description": ""
+                },
+                {
+                    "name": "examples",
+                    "description": "hst contracts accept cmau3oszrbzddte70nfvz44r7"
+                }
+            ],
+            "parameter": {
+                "href": "hstcontractsacceptparameter"
             }
         }
     ]

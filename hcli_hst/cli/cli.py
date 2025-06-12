@@ -19,7 +19,8 @@ class CLI:
             'agents': self._handle_agents,
             'ships': self._handle_ships,
             'systems': self._handle_systems,
-            'server': self._handle_server
+            'server': self._handle_server,
+            'contracts': self._handle_contracts
         }
 
     def execute(self) -> Optional[io.BytesIO]:
@@ -55,3 +56,12 @@ class CLI:
 
     def _handle_server(self) -> None:
         return io.BytesIO(self.service.server())
+
+    def _handle_contracts(self) -> None:
+        if len(self.commands) == 2:
+            return io.BytesIO(self.service.contracts())
+        if len(self.commands) == 3:
+            return io.BytesIO(self.service.contracts(self.commands[2]))
+        if len(self.commands) == 4:
+            if self.commands[2] == 'accept':
+                return io.BytesIO(self.service.contracts_accept(self.commands[3]))
